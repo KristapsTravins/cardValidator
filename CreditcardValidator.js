@@ -35,8 +35,7 @@ const credit = [
   
 
 
-  let cardNr = credit[3].CreditCard['CardNumber'].toString();
-console.log(cardNr);
+
 const NrValidator = (nr) =>{
 const odd = [];
 const even = [];
@@ -56,9 +55,21 @@ const evenWork = (evernArr) =>{
     resultArr.push(parseInt(eventree[k]))
   };
   return resultArr.reduce(reducer);
-
 };
-
 return evenWork(even)+oddSum;
 };
-console.log(NrValidator(cardNr));
+
+const FilterFaulty = () =>{ 
+console.log("Faulty Card numbers :");
+  for(var i = 0; i < credit.length ; i++) {
+    let cardNr = credit[i].CreditCard['CardNumber'].toString();
+    NrValidator(cardNr)%10 != 0?console.log(cardNr):true;
+  }
+
+
+
+
+
+};
+console.log(FilterFaulty());
+
